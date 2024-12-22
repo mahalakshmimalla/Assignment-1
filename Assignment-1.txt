@@ -1,0 +1,74 @@
+
+Assignment-1 Queries:--
+
+1. select count(*) as total_employees from emp;
+
+2. select count(*) as total_departments from dept;
+
+3. select ename from emp;
+
+4. select dname from dept;
+
+5. select sum(sal) as total_salary_paid from emp;
+
+6. select sum(comm) as total_commision_paid from emp;
+
+7. select job from emp where comm>0;
+
+8. select sysdate from dual;
+
+9. select avg(sal) as average_salarypaid from emp;
+
+10. select dept_no , count(*) from emp group by dept_no;
+
+11. select dept_no, sum(sal) from emp group by dept_no;
+
+12. select job , count(*) from emp group by job;
+
+13. select job , avg(sal) from emp group by job;
+
+14. select ename , hire_date from emp;
+
+15. select ename , dept_no from emp order by dept_no;
+
+16. select ename , job from emp order by job;
+
+17. select ename, sal from emp order by sal desc;
+
+18. select ename, dept_no, sal from emp order by dept_no asc, sal desc;
+
+19. select count(*) from emp where length(ename) = 6;
+
+20. select max(sal) , min(sal) from emp;
+
+21. select dept_no, max(sal), min(sal), avg(sal) , sum(sal) from emp group by dept_no;
+
+22. select ename, hire_date from emp order by hire_date;
+
+23. select * from emp
+      order by hire_date desc
+      fetch first 1 row only;
+
+24.  select * from emp
+      order by hire_date asc
+      fetch first 1 row only;
+
+25. select ename, hire_date,dept_no from emp order by hire_date desc , dept_no asc;
+
+26. select ename ,sal from emp 
+    where sal>= (select avg(sal) from emp);
+
+27.  select ename ,sal from emp 
+    where sal<= (select avg(sal) from emp);
+
+28. select ename, sal from emp
+      where sal>2000 and sal < 4000;
+
+29. select * from emp
+     where sal = (select max(sal) from emp)
+    union all
+select * from emp
+     where sal = (select min(sal) from emp);
+
+30. select count(*) from emp
+     where to_char(hire_date, 'MON') = 'JAN'
